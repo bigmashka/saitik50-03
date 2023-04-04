@@ -11,6 +11,7 @@
     --primary-color: #ff6464;
     --secondary-color: #00a8cc;
     --dark-blue: #142850;
+    --bg-lightblue: #edf7fa;
 }
 h1,h2,h3,h4 {
     color: var(--main-color);
@@ -27,6 +28,7 @@ button{
 
 .container{
     width: 860px;
+    max-width: 100%;
     margin: 0 auto;
 }
 header{
@@ -54,11 +56,11 @@ header ul li a{
     color: black;
 }
 .content {
-    margin-top: 120px;
+    margin-top: 120px 0 80px 0;
     justify-content: space-between;
     display:flex;
 
-    height: 300px;
+    min-height: 300px;
 }
 .content .content-left {
     display: flex;
@@ -78,4 +80,61 @@ header ul li a{
 }
 .content .content-right img{
     filter: drop-shadow(-5px -13px 0px #edf7fa);
+}
+section{
+    padding: 32px 0;
+}
+section h3{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+section a.all {
+    color: var(--secondary-color);
+
+}
+section.recent {
+    background-color: var(--bg-lightblue);
+
+}
+section.recent .recent-header {
+    display: flex;
+    justify-content: space-between; /*выравнивание по */
+    align-items: center; /*выравнивание по */
+}
+
+section.recent .recent-card-container {
+    max-width: 418px;
+    min-height: 295px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-top: 22px;
+    
+}
+
+section.recent .recent-card-container{
+    font-size: 1.625rem;
+    font-weight: 700;
+}
+
+section.recent .recent-card-container .description {
+    display: flex;
+    justify-content: space-between;
+    min-width: 280px;
+}
+
+section.recent .recent-card-container .description .line{
+    width: 1px;
+    height: 20px;
+    background-color: #000; 
+}
+
+section.recent .recent-container {
+    display: flex;
+    justify-content: space-between;
 }

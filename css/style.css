@@ -12,7 +12,7 @@
 
 }
 
-body, html {
+body, html, main {
     overflow-x: hidden;
 }
 
@@ -21,6 +21,11 @@ body, html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+section h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
 }
 
 h1 {
@@ -34,6 +39,21 @@ p {
 
 h1,h2,h3,h4 {
     color: var(--main-color)
+}
+
+section.work-detailed h3, section.work-detailed h4{
+    font-weight: 500;
+    margin: 5px 0;
+
+}
+section.work-detailed h3{
+    font-size: 1.875rem;
+
+}
+
+section.work-detailed h4{
+    font-size: 1.5rem;
+
 }
 
 .content button {
@@ -55,9 +75,15 @@ h1,h2,h3,h4 {
 header {
     width: 100%;
     height: 80px;
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+h3 a {
+    color: inherit;
+    text-decoration: none;
 }
 
 header ul {
@@ -111,13 +137,31 @@ section {
     padding: 32px 0;
 }
 
-section h3 {
-    font-size: 1.4rem;
-    font-weight: 400;
-}
+
 
 .section-header h2 {
-    font-style: 2.15rem;
+    font-size: 2.15rem;
+}
+
+.section.recent.blogs {
+    background: #fff;
+}
+
+.section.recent.blogs .recent-container {
+    flex-direction: column;
+}
+
+.section.recent.blogs .recent-container .recent-card-container {
+    padding: 30px 0;
+    max-width: fit-content;
+    min-height: auto;
+    height: 200px;
+
+    border-bottom: 1px solid var(--border-grey);
+}
+
+.section.recent.blogs .recent-container .recent-card-container .description p:nth-child(3) {
+    color: var(--grey-color);
 }
 
 section a.all {
@@ -257,6 +301,17 @@ footer nav ul {
     background-image: url('../img/tg.svg');
 }
 
+.work-detailed img{
+    margin: 30px 0;
+    width: 100%;
+
+}
+
+.work-detailed img.first-img{
+    margin: 50px 0;
+}
+
+
 section.works .works-header .description {
     display: flex;
     justify-content: space-between;
@@ -364,6 +419,13 @@ button.burger {
     justify-content: space-between;
     align-items: center;
     display: none;
+
+    transform: translateX(0px);
+    transition: .3s;
+}
+
+button.burger.open {
+    transform: translateX(-20px);
 }
 
 button.burger .line {
@@ -400,12 +462,17 @@ button.burger.open .line-3 {
         padding: 20px 10px;
         width: 100px;
 
-        right: -100%;
+        transform: translateY(100px);
+        opacity: 0;
+        pointer-events: none;
+
         transition: .3s;
     }
 
     header ul.menu.open {
-        right: 0;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
     }
 
     button.burger {
